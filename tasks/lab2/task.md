@@ -18,6 +18,8 @@
 #### 3. Запустите сервер приложений
 
 `python manage.py runserver`
+# Starting development server at http://127.0.0.1:8000/
+
 
 Если всё удачно, то зайдите на локальный хост http://127.0.0.1:8000/ , где будет развернуто ваше приложение.
 
@@ -96,8 +98,8 @@ from datetime import datetime
 
 def datetime_view(request):
     if request.method == "GET":
-        data = ...  # Написать, что будет возвращаться из данного представления
-        # Вернуть объект HttpResponse с необходимыми данными
+        data = datetime.now()  # Написать, что будет возвращаться из данного представления
+        return HttpResponse(data) # Вернуть объект HttpResponse с необходимыми данными
 ```
 
 Далее уже по предыдущему примеру создадим маршрут, импортировав представление в `urls.py` 
